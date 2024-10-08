@@ -153,7 +153,7 @@ bibtex: >
 ## Release your project page automatically by GitHub Actions
 ### Deploy from GitHub Actions
 - Navigate to `https://github.com/{your-github-repo-path}/settings/pages`
-- Select `GitHub Actions` at **Build and Deployment > GitHub Actions**
+- Select **GitHub Actions** at Build and Deployment > Source
 - See also: [GitHub Documentation](https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) and [actions/deploy-pages](https://github.com/actions/deploy-pages)
 
 ![image](https://github.com/user-attachments/assets/4f1ad0f3-46f8-4ab0-8a0c-062d2fba7b46)
