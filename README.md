@@ -151,17 +151,25 @@ bibtex: >
 ```
 
 ## Release your project page automatically by GitHub Actions
-- **We have already created organization token for omron-sinicx** https://github.com/organizations/omron-sinicx/settings/secrets/actions
-  - **Just in case the token above is unavailable:** generate personal access token by yourself
-    - see https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-set-personal-access-token-personal_token
-    - register the token as `PERSONAL_TOKEN` at `https://github.com/path/to/your/repo/settings/secrets/actions`
-
-### Release your project page automatically bt GitHub Actions
+### Deploy from GitHub Actions
 - Navigate to `https://github.com/{your-github-repo-path}/settings/pages`
-- Select `GitHub Actions` at **Build and Deployment > Source**
+- Select `GitHub Actions` at **Build and Deployment > GitHub Actions**
+- See also: [GitHub Documentation](https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) and [actions/deploy-pages](https://github.com/actions/deploy-pages)
+
+![image](https://github.com/user-attachments/assets/4f1ad0f3-46f8-4ab0-8a0c-062d2fba7b46)
+
+### Push project page source to "project-page" branch
 - `$ git remote add github {your-github-repo-path}`
 - `$ git push github {local-project-page-branch}:project-page`
-- See also: [GitHub Documentation](https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) and [actions/deploy-pages](https://github.com/actions/deploy-pages)
+- See also: https://github.com/omron-sinicx/projectpage-template/blob/main/.github/workflows/deploy.yaml
+
+### TroubleShooting
+> [!CAUTION]
+> Branch "project-page" is not allowed to deploy to github-pages due to environment protection rules.
+
+Navigate to Settings > Environments > github-pages > 🗑️
+![image](https://github.com/user-attachments/assets/ddaa751d-cedc-4665-86a1-8afd88e04e52)
+
 
 ## Contributions
 Pull requests and bug reports are welcome. Feel free to [open issues](https://github.com/omron-sinicx/projectpage-template/issues)
