@@ -151,6 +151,7 @@ bibtex: >
 ```
 
 ## Release your project page automatically by GitHub Actions
+- example project: https://github.com/omron-sinicx/mabr/tree/project-page
 ### Deploy from GitHub Actions
 - Navigate to `https://github.com/{your-github-repo-path}/settings/pages`
 - Select **GitHub Actions** at Build and Deployment > Source
@@ -158,17 +159,23 @@ bibtex: >
 
 ![image](https://github.com/user-attachments/assets/4f1ad0f3-46f8-4ab0-8a0c-062d2fba7b46)
 
+> [!NOTE] 
+> When using GitHub Actions to deploy a site on GitHub Pages, the source code is built internally during the workflow run. Only the build artifacts (e.g., HTML, CSS, JS) are deployed to the GitHub Pages environment, while the repository itself retains only the source code. 
+
 ### Push project page source to "project-page" branch
 - `$ git remote add github {your-github-repo-path}`
 - `$ git push github {local-project-page-branch}:project-page`
 - See also: https://github.com/omron-sinicx/projectpage-template/blob/main/.github/workflows/deploy.yaml
 
 ### TroubleShooting
-> [!CAUTION]
-> Branch "project-page" is not allowed to deploy to github-pages due to environment protection rules.
 
+<details>
+<summary>Branch "project-page" is not allowed to deploy to github-pages due to environment protection rules</summary>
 Navigate to Settings > Environments > github-pages > 🗑️
+  
 ![image](https://github.com/user-attachments/assets/ddaa751d-cedc-4665-86a1-8afd88e04e52)
+
+</details>
 
 
 ## Contributions
