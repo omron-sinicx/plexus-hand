@@ -177,6 +177,15 @@ Navigate to Settings > Environments > github-pages > 🗑️
 
 </details>
 
+## OGP (Open Graph Protocol)
+- OGP meta tags are [automatically generated](https://github.com/omron-sinicx/projectpage-template/blob/main/src/pages/index.jsx#L20-L55) from `template.yaml` and correctly rendered when deployed via **GitHub Actions (see above)**. 
+
+> [!CAUTION] 
+>  For local builds, react-snap must work properly to convert output into static HTML. We recommend building via GitHub Actions for consistent dependency management.
+
+- sample: https://x.com/omron_sinicx/status/1847150071143715312
+![image](https://github.com/user-attachments/assets/97cd7bda-5773-4ced-acbe-8bcbd60219f3)
+
 
 ## Contributions
 Pull requests and bug reports are welcome. Feel free to [open issues](https://github.com/omron-sinicx/projectpage-template/issues)
