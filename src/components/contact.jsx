@@ -116,7 +116,7 @@ export default class Contact extends React.Component {
                 <GithubContactCard
                   repo={this.props.resources.code}
                   issues={this.props.resources.code + '/issues'}
-                  key={'conatct-github'}
+                  key={'contact-github'}
                 />
               );
             } else {
