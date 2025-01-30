@@ -16,13 +16,19 @@ theme: default # default || dark
 
 ### 📋 Prerequisites | 🪟WSL 🐧Linux 🍎MacOS
 
-#### 🔧 Node.js Installation (v20+)
+#### 🔧 Node.js Installation
 
 We recommend using [Volta](https://volta.sh/) for Node.js version management:
 
 ```bash
 curl https://get.volta.sh/ | bash
-# Restart your shell
+```
+
+```bash
+# Restart your shell (The configurations is automatically added to your *shrc || *shenv)
+# export VOLTA_HOME="$HOME/.volta"
+# export PATH="$VOLTA_HOME/bin:$PATH"
+
 volta install node@20.11.0
 volta pin node@20.11.0
 ```
@@ -36,24 +42,24 @@ npm --version   # Should show 10.2.4+
 
 ## 🛠️ Development
 
-### 📦 Installation
+### 📥 Installation
 
 ```sh
 npm install
 ```
 
-````
 ### 💻 Development Mode
+
 ```bash
-npm run serve
-````
+npm run dev
+```
 
 ### 🏗️ Production Mode
 
 ```bash
 npm run clean
 npm run build
-npm run serve
+npm run preview
 ```
 
 #### 🖥️ Puppeteer Dependencies
@@ -62,6 +68,20 @@ Required for pre-rendering React apps with react-snap:
 
 ```bash
 sudo apt install -y libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb libgbm-dev fonts-ipafont
+```
+
+If the react-snap post-build process completes successfully, you should see a message similar to this:
+
+```sh
+✓ built in 5.01s
+> sinicx-template@2.0.0 postbuild
+> react-snap
+
+💬  console.log at /: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+💬  console.log at /: SecurityError: Blocked a frame with origin "https://speakerdeck.com" from accessing a cross-origin frame.
+💬  console.log at /: 'window.webkitStorageInfo' is deprecated. Please use 'navigator.webkitTemporaryStorage' or 'navigator.webkitPersistentStorage' instead.
+✅  crawled 1 out of 1 (/)
 ```
 
 ### 📋 Template
@@ -105,18 +125,22 @@ src/
 ```
 
 ## 🚀 Release your project page automatically by GitHub Actions
+
 - example project: https://github.com/omron-sinicx/mabr/tree/project-page
+
 ### :octocat: Deploy from GitHub Actions
+
 - Navigate to `https://github.com/{your-github-repo-path}/settings/pages`
 - Select **GitHub Actions** at Build and Deployment > Source
 - See also: [GitHub Documentation](https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) and [actions/deploy-pages](https://github.com/actions/deploy-pages)
 
 ![image](https://github.com/user-attachments/assets/4f1ad0f3-46f8-4ab0-8a0c-062d2fba7b46)
 
-> [!NOTE] 
-> When using GitHub Actions to deploy a site on GitHub Pages, the source code is built internally during the workflow run. Only the build artifacts (e.g., HTML, CSS, JS) are deployed to the GitHub Pages environment, while the repository itself retains only the source code. 
+> [!NOTE]
+> When using GitHub Actions to deploy a site on GitHub Pages, the source code is built internally during the workflow run. Only the build artifacts (e.g., HTML, CSS, JS) are deployed to the GitHub Pages environment, while the repository itself retains only the source code.
 
 ### 🌿 Push project page source to "project-page" branch
+
 - `$ git remote add github {your-github-repo-path}`
 - `$ git push github {local-project-page-branch}:project-page`
 - See also: https://github.com/omron-sinicx/projectpage-template/blob/main/.github/workflows/deploy.yaml
@@ -135,10 +159,11 @@ Navigate to Settings > Environments > github-pages > 🗑️
 
 ### 🌐 OGP Support
 
-- OGP meta tags are [automatically generated](https://github.com/omron-sinicx/projectpage-template/blob/main/src/pages/index.jsx#L20-L55) from `template.yaml` and correctly rendered when deployed via **GitHub Actions (see above)**. 
+- OGP meta tags are [automatically generated](https://github.com/omron-sinicx/projectpage-template/blob/main/src/pages/index.jsx#L20-L55) from `template.yaml` and correctly rendered when deployed via **GitHub Actions (see above)**.
 - Example: [Twitter Card Preview](https://x.com/omron_sinicx/status/1847150071143715312)
-  > [!CAUTION]
-  > For local builds, react-snap must work properly to convert output into static HTML. We recommend building via GitHub Actions for consistent dependency management.
+
+> [!CAUTION]
+> For local builds, react-snap must work properly to convert output into static HTML. We recommend building via GitHub Actions for consistent dependency management.
 
 ## 🐶 Husky & Typo Checking
 

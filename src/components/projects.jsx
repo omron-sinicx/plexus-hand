@@ -37,11 +37,7 @@ export default class Projects extends React.Component {
           return (
             <ProjectCard
               title={project.title}
-              img={
-                project.img.startsWith('https://')
-                  ? project.img
-                  : require(`../media/${project.img}`)
-              }
+              img={project.img}
               description={project.description}
               journal={project.journal}
               url={project.url}

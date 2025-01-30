@@ -8,6 +8,7 @@ resources:
   code: https://github.com/omron-sinicx/multipolar
   video: https://www.youtube.com/embed/W8nBFKDxsb0
   blog: https://medium.com/sinicx/multipolar-multi-source-policy-aggregation-for-transfer-reinforcement-learning-between-diverse-bc42a152b0f5
+  demo: https://colab.research.google.com/
   huggingface: https://huggingface.co/
 description: explore a new challenge in transfer RL, where only a set of source policies collected under unknown diverse dynamics is available for learning a target task efficiently.
 image: https://omron-sinicx.github.io/multipolar/assets/teaser.png
@@ -70,15 +71,15 @@ overview: |
 body:
   - title: Media examples
     text: |
-      You can access media files in `src/media/` using `assets/` paths
+      You can access media files in `public` directly like: `<img src="method.png" />` 
 
-      <img src="assets/method.png" alt="" />
+      <img src="method.png" alt="" />
 
       See also [UIKit Video Components Documentation](https://getuikit.com/docs/video) and [Grid system](https://getuikit.com/docs/grid)
       <div class="uk-child-width-1-2@m" uk-grid>
         <div>
           <video
-            src="assets/demo.mp4"
+            src="demo.mp4"
             loop
             muted
             uk-video="autoplay:inview"
@@ -86,7 +87,7 @@ body:
         </div>
         <div>
           <video
-            src="assets/demo.mp4"
+            src="demo.mp4"
             loop
             muted
             uk-video="autoplay:inview"
@@ -229,13 +230,19 @@ body:
 projects:
   - title: 'maru: a miniature-sized wheeled robot for swarm robotics research'
     journal: "CHI'24"
-    img: 'https://github.com/omron-sinicx/swarm-body/raw/main/images/teaser.jpg'
+    img: https://getuikit.com/docs/images/light.jpg
     description: |
       "maru" (= miniature assemblage adaptive robot unit) is a custom-made, miniature-sized, two-wheeled robot designed specifically for tabletop swarm robotics research.
     url: https://github.com/omron-sinicx/swarm-body
   - title: 'Language-Guided Pattern Formation for Swarm Robotics with Multi-Agent Reinforcement Learning'
     journal: "IROS'24"
-    img: teaser.png
+    img: https://omron-sinicx.github.io/language-guided-pattern-formation/assets/teaser.png
+    description: |
+      "maru" (= miniature assemblage adaptive robot unit) is a custom-made, miniature-sized, two-wheeled robot designed specifically for tabletop swarm robotics research.
+    url: https://github.com/omron-sinicx/swarm-body
+  - title: 'Language-Guided Pattern Formation for Swarm Robotics with Multi-Agent Reinforcement Learning'
+    journal: "IROS'24"
+    img: method.png
     description: |
       "maru" (= miniature assemblage adaptive robot unit) is a custom-made, miniature-sized, two-wheeled robot designed specifically for tabletop swarm robotics research.
     url: https://github.com/omron-sinicx/swarm-body
