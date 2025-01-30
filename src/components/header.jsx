@@ -99,7 +99,7 @@ export default class Header extends React.Component {
     const backgroundStyle = this.state.isMobile
       ? null
       : {
-          backgroundImage: `url(assets/${this.props.header.bg_curve})`,
+          backgroundImage: `url(${this.props.header.bg_curve})`,
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'right',
