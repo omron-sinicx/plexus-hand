@@ -5,6 +5,7 @@ title: 'Multi-Agent Behavior Retrieval: Retrieval-Augmented Policy Training for 
 conference: IROS2024
 resources:
   paper: https://arxiv.org/abs/1909.13111
+  poster:
   code: https://github.com/omron-sinicx/multipolar
   video: https://www.youtube.com/embed/W8nBFKDxsb0
   blog: https://medium.com/sinicx/multipolar-multi-source-policy-aggregation-for-transfer-reinforcement-learning-between-diverse-bc42a152b0f5
