@@ -75,24 +75,39 @@ body:
       You can access media files in `public` directly like: `<img src="method.png" />` 
 
       <img src="method.png" alt="" />
+      <span class="uk-text-meta">Example figcaption text</span>
 
       See also [UIKit Video Components Documentation](https://getuikit.com/docs/video) and [Grid system](https://getuikit.com/docs/grid)
-      <div class="uk-child-width-1-2@m" uk-grid>
-        <div>
-          <video
-            src="demo.mp4"
-            loop
-            muted
-            uk-video="autoplay:inview"
-            />
+      <div uk-slider>
+        <div class="uk-slider-items uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+          <div>
+            <video
+              src="demo.mp4"
+              loop
+              muted
+              uk-video="autoplay:inview"
+              />
+          </div>
+          <div>
+            <video
+              src="demo.mp4"
+              loop
+              muted
+              uk-video="autoplay:inview"
+              />
+          </div>
+          <div>
+            <video
+              src="demo.mp4"
+              loop
+              muted
+              uk-video="autoplay:inview"
+              />
+          </div>
         </div>
-        <div>
-          <video
-            src="demo.mp4"
-            loop
-            muted
-            uk-video="autoplay:inview"
-            />
+        <div class="uk-flex uk-flex-center uk-margin-small">
+          <a class="uk-icon-button" href uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-icon-button uk-margin-small-left" href uk-slidenav-next uk-slider-item="next"></a>
         </div>
       </div>
   - title: Markdown examples
