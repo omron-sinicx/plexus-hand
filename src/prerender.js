@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { renderToString } from 'react-dom/server';
 import { Helmet } from 'react-helmet';
 
@@ -12,52 +11,24 @@ import Footer from '@/components/footer.jsx';
 import Citation from '@/components/citation.jsx';
 import SpeakerDeck from '@/components/speakerdeck.jsx';
 import Projects from '@/components/projects.jsx';
-import data from '../../template.yaml';
-
-import '@/js/styles.js';
+import data from '../template.yaml';
 
 class Template extends React.Component {
   render() {
     return (
       <div>
-        <Helmet
-          title={data.title}
-          meta={[
-            {
-              name: 'viewport',
-              content: 'width=device-width,initial-scale=1',
-            },
-            {
-              property: 'og:site_name',
-              content: data.organization,
-            },
-            { property: 'og:type', content: 'article' },
-            { property: 'og:title', content: data.title },
-            {
-              property: 'og:description',
-              content: data.description,
-            },
-            { property: 'og:image', content: data.image },
-            { property: 'og:image:alt', content: data.description },
-            { property: 'og:image:width', content: '1200' },
-            { property: 'og:image:height', content: '600' },
-            { property: 'og:url', content: data.url },
-            {
-              name: 'twitter:card',
-              content: 'summary_large_image',
-            },
-            { name: 'twitter:title', content: data.title },
-            { name: 'twitter:image:src', content: data.image },
-            {
-              name: 'twitter:description',
-              content: data.description,
-            },
-            { name: 'twitter:url', content: data.url },
-            { name: 'twitter:site', content: data.twitter },
-          ]}
-        />
+        <Helmet>
+          <title>{data.meta.title}</title>
+          <meta name="description" content={data.meta.description} />
+          <meta property="og:title" content={data.meta.title} />
+          <meta property="og:description" content={data.meta.description} />
+          <meta property="og:image" content={data.meta.image} />
+          <meta property="og:url" content={data.meta.url} />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Helmet>
         <Header
           title={data.title}
+          venue={data.venue}
           conference={data.conference}
           authors={data.authors}
           affiliations={data.affiliations}
@@ -89,12 +60,12 @@ class Template extends React.Component {
   }
 }
 
-if (typeof document !== 'undefined') {
-  render(<Template />, document.getElementById('root'));
-}
-
-// Export prerender function for vite-prerender-plugin
 export function prerender() {
   const html = renderToString(<Template />);
-  return { html };
+  const helmet = Helmet.renderStatic();
+
+  return {
+    html,
+    head: helmet.title.toString() + helmet.meta.toString(),
+  };
 }
