@@ -12,6 +12,8 @@ resources:
   blog: 
   demo: 
   huggingface: 
+  # 埋め込み用のURLを追加
+video_embed: https://www.youtube.com/embed/BrtDCmmOGHw  # 埋め込み用
 description: 'We developed a lightweight (311g) prosthetic hand that enables both basic hand postures and precision–lateral manipulation using only four motors. This design offers a solution for daily life activities that require rotational manipulation capabilities.'
 image: https://omron-sinicx.github.io/plexus-hand/teaser.png
 url: https://omron-sinicx.github.io/plexus-hand

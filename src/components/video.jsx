@@ -29,7 +29,10 @@ export default class Video extends React.Component {
   }
 
   render() {
-    if (!this.props.video) return null;
+    if (!this.props.video && !this.props.videoEmbed) return null;
+  
+    // 埋め込み用URLがあればそれを使う、なければvideoを使う
+    const embedUrl = this.props.videoEmbed || this.props.video;
     const wrapperClass = {
       overflow: 'hidden',
       paddingBottom: '56.25%',
