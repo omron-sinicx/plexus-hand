@@ -79,7 +79,7 @@ class Template extends React.Component {
             { name: 'twitter:url', content: data.url },
             { name: 'twitter:site', content: data.twitter },
           ]}
-          >
+        >
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
@@ -90,7 +90,7 @@ class Template extends React.Component {
               "image": data.image,
               "author": {
                 "@type": "Organization",
-                "name": data.organization
+                "name": data.organization,
               }
             })}
           </script>
