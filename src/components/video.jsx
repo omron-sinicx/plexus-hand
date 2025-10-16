@@ -55,7 +55,7 @@ export default class Video extends React.Component {
           <iframe
             style={innerClass}
             className="uk-align-center uk-width-1-1"
-            src={this.props.video}
+            src={embedUrl}
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
