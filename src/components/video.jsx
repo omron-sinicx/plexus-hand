@@ -6,6 +6,28 @@ export default class Video extends React.Component {
     super(props);
   }
 
+  // YouTubeのURLをembed形式に変換
+  getEmbedUrl(url) {
+    if (!url) return null;
+    
+    // すでにembed形式なら、そのまま返す
+    if (url.includes('/embed/')) {
+      return url;
+    }
+    
+    // watch?v=形式をembed形式に変換
+    const videoId = url.split('v=')[1];
+    if (videoId) {
+      const ampersandPosition = videoId.indexOf('&');
+      const cleanVideoId = ampersandPosition !== -1 
+        ? videoId.substring(0, ampersandPosition) 
+        : videoId;
+      return `https://www.youtube.com/embed/${cleanVideoId}`;
+    }
+    
+    return url;
+  }
+
   render() {
     if (!this.props.video) return null;
     const wrapperClass = {
