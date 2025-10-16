@@ -43,6 +43,10 @@ class Template extends React.Component {
         <Helmet
           title={data.title}
           meta={[
+            { name: 'description', content: data.description },
+            { name: 'keywords', content: 'prosthetic hand, robotics, rehabilitation, dexterous manipulation, assistive technology, OMRON' },
+            { name: 'author', content: data.organization },
+            { name: 'robots', content: 'index, follow' },
             {
               name: 'viewport',
               content: 'width=device-width,initial-scale=1',
@@ -75,7 +79,22 @@ class Template extends React.Component {
             { name: 'twitter:url', content: data.url },
             { name: 'twitter:site', content: data.twitter },
           ]}
-        />
+          >
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": data.title,
+              "description": data.description,
+              "url": data.url,
+              "image": data.image,
+              "author": {
+                "@type": "Organization",
+                "name": data.organization
+              }
+            })}
+          </script>
+        </Helmet>
         <Header
           title={data.title}
           conference={data.conference}

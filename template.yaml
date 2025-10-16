@@ -4,13 +4,14 @@ twitter: '@omron_sinicx'
 title: 'PLEXUS Hand: Lightweight Four-Motor Prosthetic Hand Enabling Precision–Lateral Dexterous Manipulation'
 conference: ICORR2025
 resources:
-  paper:
+  paper: https://ieeexplore.ieee.org/document/11063043
+  arxiv: https://arxiv.org/abs/2510.09209
   poster:
-  code:
-  video: ICORR25_0007_Video.mp4
-  blog:
-  demo:
-  huggingface:
+  code: 
+  video: https://www.youtube.com/watch?v=BrtDCmmOGHw
+  blog: 
+  demo: 
+  huggingface: 
 description: 'We developed a lightweight (311g) prosthetic hand that enables both basic hand postures and precision–lateral manipulation using only four motors. This design offers a solution for daily life activities that require rotational manipulation capabilities.'
 image: https://omron-sinicx.github.io/plexus-hand/teaser.png
 url: https://omron-sinicx.github.io/plexus-hand
