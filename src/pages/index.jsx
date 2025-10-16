@@ -44,7 +44,11 @@ class Template extends React.Component {
           title={data.title}
           meta={[
             { name: 'description', content: data.description },
-            { name: 'keywords', content: 'prosthetic hand, robotics, rehabilitation, dexterous manipulation, assistive technology, OMRON' },
+            {
+              name: 'keywords',
+              content:
+                'prosthetic hand, robotics, rehabilitation, dexterous manipulation, assistive technology, OMRON',
+            },
             { name: 'author', content: data.organization },
             { name: 'robots', content: 'index, follow' },
             {
@@ -82,16 +86,16 @@ class Template extends React.Component {
         >
           <script type="application/ld+json">
             {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              "name": data.title,
-              "description": data.description,
-              "url": data.url,
-              "image": data.image,
-              "author": {
-                "@type": "Organization",
-                "name": data.organization,
-              }
+              '@context': 'https://schema.org',
+              '@type': 'WebPage',
+              name: data.title,
+              description: data.description,
+              url: data.url,
+              image: data.image,
+              author: {
+                '@type': 'Organization',
+                name: data.organization,
+              },
             })}
           </script>
         </Helmet>
