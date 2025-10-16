@@ -1,16 +1,16 @@
 theme: default # default || dark
 organization: OMRON SINIC X
 twitter: '@omron_sinicx'
-title: "PLEXUS Hand: Lightweight Four-Motor Prosthetic Hand Enabling Precision–Lateral Dexterous Manipulation"
+title: 'PLEXUS Hand: Lightweight Four-Motor Prosthetic Hand Enabling Precision–Lateral Dexterous Manipulation'
 conference: ICORR2025
 resources:
-  paper: 
+  paper:
   poster:
-  code: 
+  code:
   video: ICORR25_0007_Video.mp4
-  blog: 
-  demo: 
-  huggingface: 
+  blog:
+  demo:
+  huggingface:
 description: 'We developed a lightweight (311g) prosthetic hand that enables both basic hand postures and precision–lateral manipulation using only four motors. This design offers a solution for daily life activities that require rotational manipulation capabilities.'
 image: https://omron-sinicx.github.io/plexus-hand/teaser.png
 url: https://omron-sinicx.github.io/plexus-hand
@@ -23,7 +23,7 @@ authors:
   - name: Tomoya Takahashi
     affiliation: [1]
     position: Project researcher
-    url: 
+    url:
   - name: Cristian C. Beltran-Hernandez
     affiliation: [1]
     position: Senior Researcher
@@ -31,7 +31,7 @@ authors:
   - name: Masashi Hamaya
     affiliation: [1]
     position: Senior Researcher
-    url: 
+    url:
   - name: Kazutoshi Tanaka
     affiliation: [1]
     position: Senior Researcher
@@ -53,17 +53,17 @@ header:
 teaser: HandTeaser.png
 overview: |
   Electric prosthetic hands should be lightweight to decrease the burden on the user, shaped like human hands for cosmetic purposes, and have motors inside to protect them from damage and dirt. In addition to the ability to perform daily activities, these features are essential for everyday use of the hand. In-hand manipulation is necessary to perform daily activities such as transitioning between different postures, particularly through rotational movements, such as reorienting cards before slot insertion and operating tools such as screwdrivers. However, currently used electric prosthetic hands only achieve static grasp postures, and existing manipulation approaches require either many motors, which makes the prosthesis heavy for daily use in the hand, or complex mechanisms that demand a large internal space and force external motor placement, complicating attachment and exposing the components to damage. Alternatively, we combine a single-axis thumb and optimized thumb positioning to achieve basic posture and in-hand manipulation, that is, the reorientation between precision and lateral grasps, using only four motors in a lightweight (311 g) prosthetic hand. Experimental validation using primitive objects of various widths (5–30 mm) and shapes (cylinders and prisms) resulted in success rates of 90–100% for reorientation tasks. The hand performed seal stamping and USB device insertion, as well as rotation to operate a screwdriver.
-  
+
 body:
   - title: Research Background
     text: |
       ### Technical Challenges in Prosthetic Hands
-      
+
       * **Electrical prosthetic hands must be:**
         * Lightweight (<500g) to decrease user burden
         * Human-shaped for cosmetic purposes
         * Have motors inside for protection against damage and dirt
-      
+
       * **Current limitations:**
         * Commercial prosthetic hands achieve only static grasp postures
         * Existing in-hand manipulation approaches either:
@@ -80,13 +80,13 @@ body:
       ### Single-Axis Thumb Design
 
       The key insight of our approach comes from research on human thumb movement. Despite the human thumb's anatomical capability for multi-axis movement, studies have shown that it primarily rotates around a single axis at the carpometacarpal (CM) joint during daily grasping tasks, particularly during fingertip-based manipulation.
-      
+
       **Our innovation consists of two components:**
-      
+
       1. **Biological inspiration:**
          * We implement a single-axis thumb design at the CM joint that mimics the primary rotational pattern observed in human thumbs
          * This simplification enables precision–lateral manipulation (transition between precision and lateral grasps) while reducing mechanical complexity
-      
+
       2. **Strategic actuation distribution:**
          * One motor for the thumb's rotational movement
          * Independent motors for index and middle fingers for precise control
@@ -130,14 +130,14 @@ body:
       ### Computational Optimization for Thumb Positioning
 
       While a single-axis design reduces complexity, the positioning of this axis is critical for successful manipulation. We developed an optimization approach to determine the ideal position:
-      
+
       **Optimization Goal:** Maximize the range of object widths that can be manipulated during precision-lateral transitions
-      
+
       **Process:**
-      
+
       1. **Identify valid thumb configurations** from the search space $\Omega$ based on the distance between the fingertips of the thumb and index finger that enable basic grasping postures
          * Add these configurations to the set of valid configurations $\Omega_{\mathrm{valid}}$
-      
+
       2. **Calculate manipulation range $W(\bm \omega)$** for each candidate thumb configuration $\bm \omega$ in $\Omega_{\mathrm{valid}}$
          * i. Fix the index finger position and move the thumb to manipulate objects
          * ii. For each index finger position $i$, calculate the range of manipulatable object widths:
@@ -149,7 +149,7 @@ body:
          * iii. Calculate the intersection of all $W_i(\bm{\omega})$ across the range of index finger positions $I$:
             
             $$W(\bm{\omega}) = \bigcap_{i \in I} W_i(\bm{\omega})$$
-      
+
       3. **Extract the optimal thumb configuration** $\bm{\omega}_{\text{opt}}$ from $\Omega_{\text{valid}}$ that enables the widest range of object manipulation:
          
          $$\bm{\omega}_{\text{opt}} = \mathop{\rm arg~max}\limits_{\bm{\omega} \in \Omega_{\text{valid}}} |W(\bm{\omega})|$$
@@ -170,24 +170,24 @@ body:
 
 
       **Four-motor actuation system:**
-      
+
       * **Thumb mechanism:** 
         * Single LAS16-023D linear motor
         * Piston-crank mechanism for linear-to-rotary motion conversion
-      
+
       * **Index and middle fingers:** 
         * Individual LAS10-023D actuators
         * Four-bar linkage mechanisms for natural curling movements
-      
+
       * **Ring and little fingers:** 
         * Shared single LAS10-023D actuator
         * Differential mechanism for adaptive grasping
-      
+
       <div>
         <img src="Linkage.png" alt="Linkage mechanisms" class="uk-align-center" />
         <span class="uk-text-meta">(a) Four-bar linkage mechanism for finger curling (b) Differential mechanism for ring-little fingers</span>
       </div>
-      
+
       <style>
         /* カーソルがビデオ上にあるときだけコントロールを表示する */
         .custom-video-container {
@@ -334,7 +334,7 @@ body:
       ### Quantitative Evaluation with Various Objects
 
       We evaluated the performance of PLEXUS Hand across:
-      
+
       * **Primitive objects:** Square prisms and cylinders (5-30mm)
       * **Common objects:** Cards, pens, seals, spoons, screwdrivers
 
@@ -526,12 +526,12 @@ body:
         * Lightweight design (311g)
         * Five basic hand postures
         * High success rates in precision-lateral manipulation tasks
-      
+
       * **Future improvements:**
         * Adaptive control to enhance object handling with varying shapes
         * Finger shape optimization for better contact with cylindrical objects
         * Flexible palm development for more stable object manipulation
-      
+
       * **Potential impact:**
         * Increased number of achievable activities of daily living
         * Reduced burden on users by eliminating need for compensatory movements
