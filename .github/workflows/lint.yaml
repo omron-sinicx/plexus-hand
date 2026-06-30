@@ -18,6 +18,8 @@ jobs:
           node-version: '22.13.1'
           cache: 'npm'
       - name: Install dependencies
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm ci
       - name: ESLint
         run: npm run lint
